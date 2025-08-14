@@ -1,0 +1,111 @@
+<html>
+<head>
+    <title>events example</title>
+    <style>
+        .box {
+            background-color: rgb(116, 209, 244);
+            text-align: center;
+            width: 150px;
+            height: 150px;
+            font-size: large;
+        }
+
+        #form {
+            position: center;
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+
+        }
+
+        #form input {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Events Example</h1>
+    <!-- <button id="btn" onclick="alert('button clicked')">Click Me</button> -->
+    <button id="btn1">Click </button><br><br>
+    <div class="box">This is Box</div><br>
+
+    <input type="text" id="input" placeholder="text"><br><br>
+
+    <form id="form" ondblclick="alert('submitted')">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="pass" id="pass" placeholder="Enter your password">
+        <button type="submit">Submit</button>
+    </form>
+
+    <input type="text" id="text" value="Hello"><br><br>
+
+    <video id="myvideo" width="200" height="200" controls>
+        <source src="C:\gsm\video.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        // let button = document.getElementsById = "btn";
+
+        //  Mouse Events
+        let button1 = document.getElementById ("btn1");
+        button1.addEventListener("click", () => alert("button clicked by click event"));
+
+        button1.addEventListener("dbclick", () => { btn1.innerText = "Double clicked by double click event" });
+
+        let div = document.getElementsByClassName("box");
+        div.addEventListener("mouseover", () => box.style.backgroundColor = "");
+        div.addEventListener("mouseout", () => box.style.backgroundColor = " ");
+        div.addEventListener("mousemover", () => box.innerText = "Div Box");
+        console.log(div);
+
+
+
+
+        // Keyboard Events 
+        let input = document.getElementById = "input";
+        input.addEventListener("keydown", (e) => console.log("key down", e.key));
+        input.addEventListener("keyup", (e) => console.log("key up", e.key));
+
+        // Form Events
+        let form = document.getElementById = "form";
+        let name = document.getElementById = "name";
+5
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Form submitted:" + name.value);
+        });
+
+        name.addEventListener("input change", () => console.log("typing:", name.value));
+        name.addEventListener("focus", () => name.style.backgroundColor = "yellow");
+        name.addEventListener("blur", () => name.style.backgroundColor = "");
+        console.log(name);
+
+
+        // Window Events
+        window.addEventListener("load", () => console.log("page fully loaded"));
+        window.addEventListener("resize", () => console.log("window resized"));
+        window.addEventListener("scroll", () => console.log("page scrolled"));
+
+
+        // Clipboard Events
+        let textbox = document.getElementById("text");
+
+        textbox.addEventListener("copy", () => alert("text copied"));
+        textbox.addEventListener("cut", () => alert("text cut"));
+        textbox.addEventListener("paste", () => alert("text pasted"));
+
+         // Media Evevnts
+         let video = document.getElementById("myvideo");
+
+        video.addEventListener("play", () => console.log("video playing"));
+        video.addEventListener("pause", () => console.log("video paused"));
+        video.addEventListener("end", () => console.log("video end"));
+
+
+
+       
+    </script>
+</body>
+
+
+</html>
