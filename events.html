@@ -40,7 +40,7 @@
     <input type="text" id="text" value="Hello"><br><br>
 
     <video id="myvideo" width="200" height="200" controls>
-        <source src="C:\gsm\video.mp4" type="video/mp4">
+        <source src="video2.mp4" type="video/mp4">
     </video>
 
     <script>
@@ -58,9 +58,6 @@
         div.addEventListener("mousemover", () => box.innerText = "Div Box");
         console.log(div);
 
-
-
-
         // Keyboard Events 
         let input = document.getElementById = "input";
         input.addEventListener("keydown", (e) => console.log("key down", e.key));
@@ -68,13 +65,9 @@
 
         // Form Events
         let form = document.getElementById = "form";
-        let name = document.getElementById = "name";
-5
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            alert("Form submitted:" + name.value);
-        });
-
+        let name = document.getElementById = "name"
+        form.addEventListener("submit", (e) => { e.preventDefault();
+            alert("Form submitted:" + name.value)});
         name.addEventListener("input change", () => console.log("typing:", name.value));
         name.addEventListener("focus", () => name.style.backgroundColor = "yellow");
         name.addEventListener("blur", () => name.style.backgroundColor = "");
@@ -85,7 +78,6 @@
         window.addEventListener("load", () => console.log("page fully loaded"));
         window.addEventListener("resize", () => console.log("window resized"));
         window.addEventListener("scroll", () => console.log("page scrolled"));
-
 
         // Clipboard Events
         let textbox = document.getElementById("text");
@@ -100,12 +92,7 @@
         video.addEventListener("play", () => console.log("video playing"));
         video.addEventListener("pause", () => console.log("video paused"));
         video.addEventListener("end", () => console.log("video end"));
-
-
-
        
     </script>
 </body>
-
-
 </html>
